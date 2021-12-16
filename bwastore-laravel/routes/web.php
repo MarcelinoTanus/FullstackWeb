@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductGalleryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,13 +44,16 @@ Route::get('/dashboard/settings', [App\Http\Controllers\DashboardSettingControll
 ->name('dashboard-settings-store');
 Route::get('/dashboard/account', [App\Http\Controllers\DashboardSettingController::class, 'account'])
 ->name('dashboard-settings-account');
-
-//->middleware(['auth','admin'])
+    
+ // ->middleware('auth','admin')
 Route::prefix('admin')
-->namespace('Admin')
-->group(function(){
-    Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])
-->name('admin-dashboard');
+    
+->group(function() {
+    Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin-dashboard');
+    Route::resource('category', CategoryController::class);
+    Route::resource('user', UserController::class);
+    Route::resource('product', ProductController::class);
+    Route::resource('product-gallery', ProductGalleryController::class);
 });
 Auth::routes();
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Transaction;
 use App\Models\Transactions;
 
 class DashboardController extends Controller
@@ -16,7 +17,7 @@ class DashboardController extends Controller
         $revenue = Transactions::sum('total_price');
         $transaction = Transactions::count();
 
-        return view('pages.admin.dashboard',[
+        return view('pages.admin.dashboard', [
             'customer' => $customer,
             'revenue' => $revenue,
             'transaction' => $transaction

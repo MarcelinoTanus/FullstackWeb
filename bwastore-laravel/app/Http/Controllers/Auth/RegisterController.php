@@ -56,6 +56,8 @@ class RegisterController extends Controller
         ]);
     }
 
+
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -69,7 +71,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'store_name' => ['nullable', 'string', 'max:255'],
-            'categories_id' => ['nullable', 'integer', 'min:8', 'exists:categories,id'],
+            'categories_id' => ['nullable', 'integer', 'exists:categories,id'],
             'is_store_open' => ['required'],
         ]);
     }

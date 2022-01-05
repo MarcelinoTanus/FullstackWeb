@@ -2,29 +2,25 @@
 
 @section('content')
     <!-- Page Content -->
-    <div class="page-content page-auth" id="register">
+    <div class="page-content page-auth mt-5" id="register">
       <div class="section-store-auth" data-aos="fade-up">
         <div class="container">
-          <div class="row align-items-center justify-content-center row-login">
-            
+          <div class="row justify-content-center">
             <div class="col-lg-4">
               <h2>
-                Memulai untuk jual beli, <br />
+                Memulai untuk jual beli <br />
                 dengan cara terbaru
               </h2>
               <form method="POST" action="{{ route('register') }}">
-                @csrf
+                        @csrf
                 <div class="form-group">
                   <label>Full Name</label>
-                  
                   <input id="name" 
-                  v-model="name"
-                      type="text" 
-                      class="form-control @error('name') is-invalid @enderror" 
-                      name="name" 
-                      value="{{ old('name') }}" 
-                      required autocomplete="name" 
-                      autofocus>
+                  v-model="name" 
+                  type="text" 
+                  class="form-control @error('name') is-invalid @enderror" 
+                  name="name" value="{{ old('name') }}" 
+                  required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -33,65 +29,59 @@
                                 @enderror
                 </div>
                 <div class="form-group">
-                  <label>Email address</label>
-                  <input 
-                      id="email" 
-                      v-model="email"
-                      @change="checkForEmailAvailability()"
-                      type="email" 
-                      class="form-control @error('email') is-invalid @enderror" 
-                      :class="{ 'is-invalid' : this.email_unavailable }"
-                      name="email" 
-                      value="{{ old('email') }}" 
-                      required autocomplete="email">
-                  
-                  @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+                  <label>Email Address</label>
+                  <input id="email" 
+                  v-model="email" 
+                  @change="checkForEmailAvailability()"
+                  type="email" 
+                  class="form-control @error('email') is-invalid @enderror" 
+                  :class="{ 'is-invalid' : this.email_unavailable }"
+                  name="email" value="{{ old('email') }}" 
+                  required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                 </div>
                 <div class="form-group">
                   <label>Password</label>
                   <input id="password" 
-                    type="password" 
-                    class="form-control @error('password') is-invalid @enderror" 
-                    name="password" 
-                    required autocomplete="new-password">
+                  type="password" 
+                  class="form-control @error('password') is-invalid @enderror" 
+                  name="password" 
+                  required autocomplete="new-password">
 
-                  @error('password')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                 </div>
-
                 <div class="form-group">
                   <label>Konfirmasi Password</label>
-                  <input id="password-confirm" 
-                    type="password" 
-                    class="form-control @error('password_confirmation') is-invalid @enderror" 
-                    name="password_confirmation" 
-                    required autocomplete="new-password">
+                  <input id="password" 
+                  type="password" 
+                  class="form-control @error('password_confirmation') is-invalid @enderror" 
+                  name="password_confirmation" 
+                  required autocomplete="new-password">
 
-                  @error('password_confirmation')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
+                                @error('password_confirmation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                 </div>
-
                 <div class="form-group">
                   <label>Store</label>
-                  <p class="texr-muted">
-                    Apakah anda juga ingin membuka toko?
-                  </p>
+                  <p class="text-muted">Apakah anda juga ingin membuka toko?</p>
                   <div
                     class="custom-control custom-radio custom-control-inline"
                   >
                     <input
-                      type="radio"
                       class="custom-control-input"
+                      type="radio"
                       name="is_store_open"
                       id="openStoreTrue"
                       v-model="is_store_open"
@@ -123,18 +113,18 @@
                 <div class="form-group" v-if="is_store_open">
                   <label>Nama Toko</label>
                   <input type="text"
-                    v-model="store_name"
-                    id="store_name"
-                    class="form-control @error('password_confirm') is-invalid @enderror" 
-                    name=:"store_name"
-                    required
-                    autocomplete
-                    autofocus>
-                    @error('store_name')
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                    @enderror
+                  v-model="store_name"
+                  id="store_name"
+                  class="form-control @error('password_confirm') is-invalid @enderror"
+                  name="store_name"
+                  required
+                  autocomplete
+                  autofocus>
+                  @error('store_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                 </div>
                 <div class="form-group" v-if="is_store_open">
                   <label>Kategori</label>
@@ -160,7 +150,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
 @endsection
 
 @push('addon-script')
@@ -219,8 +209,8 @@
 
         data() {
           return {
-                    name: "Angga Hazza Sett",
-                    email: "kamujagoan@bwa.id",
+                    name: "",
+                    email: "",
                     is_store_open: true,
                     store_name: "",
                     email_unavailable: false

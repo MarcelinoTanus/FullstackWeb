@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Cart;
-use App\Models\Transactions;
+use App\Models\Transaction;
 use App\Models\TransactionDetail;
 
 use Exception;
@@ -28,7 +28,7 @@ class CheckoutController extends Controller
             ->where('users_id', Auth::user()->id)
             ->get();
 
-        $transaction = Transactions::create([
+        $transaction = Transaction::create([
             'users_id' => Auth::user()->id,
             'inscurance_price' => 0,
             'shipping_price' => 0,

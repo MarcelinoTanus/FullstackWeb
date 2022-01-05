@@ -7,15 +7,14 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 use App\Models\Transaction;
-use App\Models\Transactions;
 
 class DashboardController extends Controller
 {
     public function index()
     {
         $customer = User::count();
-        $revenue = Transactions::sum('total_price');
-        $transaction = Transactions::count();
+        $revenue = Transaction::sum('total_price');
+        $transaction = Transaction::count();
 
         return view('pages.admin.dashboard', [
             'customer' => $customer,

@@ -197,7 +197,7 @@
                                 "Email anda tersedia! Silahkan lanjut langkah selanjutnya!", {
                                     position: "top-center",
                                     className: "rounded",
-                                    duration: 1000,
+                                    duration: 3000,
                                 }
                             );
                             self.email_unavailable = false;
@@ -206,7 +206,7 @@
                                 "Maaf, tampaknya email sudah terdaftar pada sistem kami.", {
                                     position: "top-center",
                                     className: "rounded",
-                                    duration: 1000,
+                                    duration: 3000,
                                 }
                             );
                             self.email_unavailable = true;

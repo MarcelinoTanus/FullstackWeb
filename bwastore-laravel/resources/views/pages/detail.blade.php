@@ -71,7 +71,7 @@
                 <div class="col-lg-8">
                   <h1>{{$product->name}}</h1>
                   <div class="owner">{{$product->user->store_name}} </div>
-                  <div class="price">{{number_format($product->price)}} </div>
+                  <div class="price">Rp {{number_format($product->price)}} </div>
                 </div>
                 <div class="col-lg-2" data-aos="zoom-in">
                   @auth
@@ -119,7 +119,7 @@
                         alt=""
                       />
                       <div class="media-body">
-                        <h5 class="mt-2 mb-1">Hazza Risky</h5>
+                        <h5 class="mt-2 mb-1">Pogba</h5>
                         I thought it was not good for living room. I really happy
                         to decided buy this product last week now feels like
                         homey.
@@ -132,7 +132,7 @@
                         alt=""
                       />
                       <div class="media-body">
-                        <h5 class="mt-2 mb-1">Anna Sukkirata</h5>
+                        <h5 class="mt-2 mb-1">Winda Franco</h5>
                         Color is great with the minimalist concept. Even I thought
                         it was made by Cactus industry. I do really satisfied with
                         this.
@@ -145,7 +145,7 @@
                         alt=""
                       />
                       <div class="media-body">
-                        <h5 class="mt-2 mb-1">Dakimu Wangi</h5>
+                        <h5 class="mt-2 mb-1">Reza pangestu</h5>
                         When I saw at first, it was really awesome to have with.
                         Just let me know if there is another upcoming product like
                         this.

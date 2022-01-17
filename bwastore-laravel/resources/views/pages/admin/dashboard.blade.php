@@ -14,7 +14,7 @@
               <div class="dashboard-heading">
                 <h2 class="dashboard-title">Admin Dashboard</h2>
                 <p class="dashboard-subtitle">
-                  This is  BWAstore Aministrator Panel
+                  Aministrator Panel
                 </p>
               </div>
               <div class="dashboard-content">
@@ -38,7 +38,7 @@
                           Revenue
                         </div>
                         <div class="dashboard-card-subtitle">
-                          ${{$revenue}}
+                          Rp {{number_format($revenue)}}
                         </div>
                       </div>
                     </div>

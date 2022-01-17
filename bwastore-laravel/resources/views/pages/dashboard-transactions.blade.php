@@ -95,25 +95,25 @@
                     
                   @foreach ($buyTransactions as $transaction)
                   <a
+                    href="{{ route('dashboard-transaction-details', $transaction->id) }}"
                     class="card card-list d-block"
-                    href="{{route('dashboard-transaction-details', $transaction->id)}}"
                   >
                     <div class="card-body">
                       <div class="row">
                         <div class="col-md-1">
                           <img
-                            src="{{Storage::url($transaction->product->galleries->first()->photos ?? '')}}"
+                            src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
                             class="w-50"
                           />
                         </div>
                         <div class="col-md-4">
-                          {{$transaction->product->name}}
+                          {{ $transaction->product->name }}
                         </div>
                         <div class="col-md-3">
-                          {{$transaction->product->user->store_name}}
+                          {{ $transaction->product->user->store_name }}
                         </div>
                         <div class="col-md-3">
-                          {{$transaction->created_at}}
+                          {{ $transaction->created_at }}
                         </div>
                         <div class="col-md-1 d-none d-md-block">
                           <img
@@ -124,7 +124,7 @@
                       </div>
                     </div>
                   </a>
-                  @endforeach
+              @endforeach
 
                       </div>
                     </div>

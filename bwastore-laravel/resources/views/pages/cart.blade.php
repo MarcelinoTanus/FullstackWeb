@@ -59,8 +59,8 @@
                         <div class="product-subtitle">by {{$cart->product->user->store_name}}</div>
                       </td>
                       <td style="width: 35%;">
-                        <div class="product-title">${{number_format($cart->product->price)}}</div>
-                        <div class="product-subtitle">USD</div>
+                        <div class="product-title">Rp {{number_format($cart->product->price)}}</div>
+                        <div class="product-subtitle">Rupiah</div>
                       </td>
                       <td style="width: 20%;">
                         <form action="{{route('cart-delete', $cart->id)}}" method="POST">
@@ -94,27 +94,26 @@
               <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="address_one">Address 1</label>
+                    <label for="address_one">Address</label>
                     <input
                       type="text"
                       class="form-control"
                       id="address_one"
                       aria-describedby="emailHelp"
                       name="address_one"
-                      value="Setra Duta Cemara"
                     />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="address_two">Address 2</label>
+                    <label for="address_two">Detail Address</label>
                     <input
                       type="text"
                       class="form-control"
                       id="address_two"
                       aria-describedby="emailHelp"
                       name="address_two"
-                      value="Blok B2 No. 34"
+                   
                     />
                   </div>
                 </div>
@@ -146,7 +145,7 @@
                       class="form-control"
                       id="zip_code"
                       name="zip_code"
-                      value="40512"
+                     
                     />
                   </div>
                 </div>
@@ -170,7 +169,7 @@
                       class="form-control"
                       id="phone_number"
                       name="phone_number"
-                      value="+628 2020 11111"
+                     
                     />
                   </div>
                 </div>
@@ -185,19 +184,19 @@
               </div>
               <div class="row" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-4 col-md-2">
-                  <div class="product-title">$0</div>
+                  <div class="product-title">Rp 0</div>
                   <div class="product-subtitle">Country Tax</div>
                 </div>
                 <div class="col-4 col-md-3">
-                  <div class="product-title">$0</div>
+                  <div class="product-title">Rp 0</div>
                   <div class="product-subtitle">Product Insurance</div>
                 </div>
                 <div class="col-4 col-md-2">
-                  <div class="product-title">$0</div>
+                  <div class="product-title">Rp 0</div>
                   <div class="product-subtitle">Ship to Jakarta</div>
                 </div>
                 <div class="col-4 col-md-2">
-                  <div class="product-title text-success">${{number_format($totalPrice ?? 0)}}</div>
+                  <div class="product-title text-success">Rp {{number_format($totalPrice ?? 0)}}</div>
                   <div class="product-subtitle">Total</div>
                 </div>
                 <div class="col-8 col-md-3">

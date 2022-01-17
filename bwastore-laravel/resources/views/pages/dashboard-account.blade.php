@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="address_one">Address 1</label>
+                        <label for="address_one">Address</label>
                         <input
                           type="text"
                           class="form-control"
@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="address_two">Address 2</label>
+                        <label for="address_two">Detail Address</label>
                         <input
                           type="text"
                           class="form-control"
